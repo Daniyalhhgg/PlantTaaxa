@@ -21,6 +21,7 @@ const Footer = () => {
             <Link to="/">Home</Link>
             <Link to="/shop">Shop</Link>
             <Link to="/contact">Contact Us</Link>
+            <Link to="/about">About Us</Link>
             <Link to="/my-orders">Track Order</Link>
           </div>
 
@@ -38,13 +39,13 @@ const Footer = () => {
             <a href="https://maps.google.com/?q=Pattoki,Pakistan" target="_blank" rel="noopener noreferrer">
               <FaMapMarkerAlt style={{ marginRight: 8 }} /> Pattoki, Punjab, Pakistan
             </a>
-            <a href="tel:+923000000000">
-              <FaPhone style={{ marginRight: 8 }} /> +92 300 0000000
+            <a href="tel:+923278140188">
+              <FaPhone style={{ marginRight: 8 }} /> +92 327 8140188
             </a>
             <a href="mailto:info@planttaxa.store">
               <FaEnvelope style={{ marginRight: 8 }} /> info@planttaxa.store
             </a>
-            <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/923278140188" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp style={{ marginRight: 8 }} /> WhatsApp Us
             </a>
           </div>

@@ -145,7 +145,7 @@ const PlantDetail = () => {
                 <FiShoppingCart /> Add to Cart
               </button>
               <a
-                href={`https://wa.me/923000000000?text=${encodeURIComponent(whatsappMsg)}`}
+                href={`https://wa.me/923278140188?text=${encodeURIComponent(whatsappMsg)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp"

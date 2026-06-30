@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FiArrowRight, FiTruck, FiShield, FiPhone, FiStar } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+import { FiArrowRight, FiTruck, FiShield, FiPhone, FiStar, FiSearch } from "react-icons/fi";
 import { FaLeaf, FaSeedling, FaSun, FaSpa, FaMountain, FaMortarPestle, FaTools } from "react-icons/fa";
 import api from "../utils/api";
 import PlantCard from "../components/PlantCard";
@@ -18,6 +18,9 @@ const categories = [
 const Home = () => {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchCategory, setSearchCategory] = useState("All");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPlants = async () => {
@@ -35,6 +38,14 @@ const Home = () => {
 
   const featuredPlants = plants.slice(0, 8);
   const discountedPlants = plants.filter((p) => p.discount > 0).slice(0, 4);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams();
+    if (searchCategory !== "All") params.set("category", searchCategory);
+    if (searchQuery) params.set("q", searchQuery);
+    navigate(`/shop?${params.toString()}`);
+  };
 
   return (
     <>
@@ -76,6 +87,36 @@ const Home = () => {
           <div className="hero-image">
             <img src="/logo512.png" alt="PlantTaxa - Premium Plants" />
           </div>
+        </div>
+      </section>
+
+      {/* Search Bar with Category Dropdown */}
+      <section style={{ padding: "32px 0 0" }}>
+        <div className="container">
+          <form className="home-search-bar" onSubmit={handleSearch}>
+            <select
+              value={searchCategory}
+              onChange={(e) => setSearchCategory(e.target.value)}
+            >
+              <option value="All">All Categories</option>
+              <option value="Indoor">Indoor</option>
+              <option value="Outdoor">Outdoor</option>
+              <option value="Succulent">Succulent</option>
+              <option value="Flowering">Flowering</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Herb">Herb</option>
+              <option value="Pots">Pots</option>
+            </select>
+            <input
+              type="text"
+              placeholder="Search plants, pots, accessories..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button type="submit">
+              <FiSearch />
+            </button>
+          </form>
         </div>
       </section>
 

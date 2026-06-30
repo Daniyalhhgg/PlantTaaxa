@@ -26,6 +26,7 @@ const Navbar = () => {
           <li><NavLink to="/" end>Home</NavLink></li>
           <li><NavLink to="/shop">Shop</NavLink></li>
           <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/about">About Us</NavLink></li>
           {isLoggedIn && <li><NavLink to="/my-orders">My Orders</NavLink></li>}
         </ul>
 
@@ -55,6 +56,7 @@ const Navbar = () => {
         <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
         <NavLink to="/shop" onClick={closeMenu}>Shop</NavLink>
         <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+        <NavLink to="/about" onClick={closeMenu}>About Us</NavLink>
         {isLoggedIn && <NavLink to="/my-orders" onClick={closeMenu}>My Orders</NavLink>}
         <NavLink to="/cart" onClick={closeMenu}>Cart ({cartCount})</NavLink>
         {!isLoggedIn && <NavLink to="/login" onClick={closeMenu}>Login / Register</NavLink>}
