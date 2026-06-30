@@ -510,8 +510,8 @@ input, select, textarea {
 /* ===== Plant Grid ===== */
 .plants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
 
 .plant-card {
@@ -530,7 +530,7 @@ input, select, textarea {
 
 .plant-card-image {
   position: relative;
-  height: 240px;
+  height: 280px;
   overflow: hidden;
   background: var(--bg-gray);
 }
@@ -1253,6 +1253,10 @@ input, select, textarea {
 }
 
 /* ===== Contact Page ===== */
+.about-page {
+  padding: 60px 0;
+}
+
 .contact-page {
   padding: 60px 0;
 }
@@ -1469,6 +1473,10 @@ input, select, textarea {
     grid-template-columns: 1fr;
   }
 
+  .plants-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1486,7 +1494,7 @@ input, select, textarea {
 
   .plants-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 16px;
   }
 
   .contact-grid {
@@ -1565,6 +1573,64 @@ input, select, textarea {
     padding-left: 0;
   }
   .cart-table td:first-child::before { display: none; }
+}
+
+/* ===== Homepage Search Bar ===== */
+.home-search-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.home-search-bar select {
+  padding: 14px 16px;
+  border: none;
+  background: var(--primary-pale);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  min-width: 140px;
+  cursor: pointer;
+  outline: none;
+  border-right: 2px solid var(--primary);
+}
+
+.home-search-bar input {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  min-width: 0;
+}
+
+.home-search-bar button {
+  padding: 14px 24px;
+  background: var(--primary);
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.home-search-bar button:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+  .home-search-bar {
+    flex-direction: column;
+    border-radius: var(--radius-md);
+  }
+  .home-search-bar select {
+    border-right: none;
+    border-bottom: 2px solid var(--primary);
+  }
 }
 
 /* ===== No results ===== */

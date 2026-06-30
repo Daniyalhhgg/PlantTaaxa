@@ -58,7 +58,7 @@ const Contact = () => {
               <div className="contact-icon"><FaPhone /></div>
               <div className="contact-text">
                 <h4>Phone</h4>
-                <p>+92 300 0000000</p>
+                <p>+92 327 8140188</p>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ const Contact = () => {
             </div>
 
             <a
-              href="https://wa.me/923000000000?text=Hi%20PlantTaxa!%20I%20have%20a%20question."
+              href="https://wa.me/923278140188?text=Hi%20PlantTaxa!%20I%20have%20a%20question."
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-btn-large"
